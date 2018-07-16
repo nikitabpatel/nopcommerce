@@ -25,13 +25,29 @@ public class TestSuit extends BaseTest
     AppleICamPage appleICamPage = new AppleICamPage();
 
     @Test
-    public void toVerifyUserShouldBeAbleToPlaceAnOrderOfJEweleryAsGuest()
+    public void toVerifyUserShouldBeAbleToPlaceAnOrderOfJeweleryAsGuest()
     {
         homePage.clickOnJewelery();
         jeweleryPage.clickOnAddToCart();
         shoppingCart.verifyUserIsAbleToUpdateShoppingCart();
         guestCheckoutOrLoginPage.verifyUserShouldBeAbleToClickOnCheckOutAsGuestButton();
         checkOutPage.fillCheckOutPageDetails();
+        onePageCheckOut.verifyUseerShouldBeAbleToSelectNextDayAirDelivery();
+        paymentCardSelectionPage.verifyUSerShouldBeAbleToSelectCreditCArdOption();
+        creditCardDetailsPage.userShouldBeAbleToEnterCardDetails();
+        confirmPaymentPage.userShouldBeAbleToConfirmPayment();
+        successPaymentPage.userShouldBeAbleToPlaceAnOrderSuccessfully();
+    }
+
+    @Test
+    public void toVerifyUSerShouldBeAbleToPlaceJeweleryAsReturningCustomer()
+    {
+        homePage.clickOnJewelery();
+        jeweleryPage.clickOnAddToCart();
+        shoppingCart.verifyUserIsAbleToUpdateShoppingCart();
+        guestCheckoutOrLoginPage.verifyUserShouldBeAbleToSelectReturningCustomer();
+        shoppingCart.verifyUserShouldConfirmShoppingCart();
+        checkOutPage.clickOnContinue();
         onePageCheckOut.verifyUseerShouldBeAbleToSelectNextDayAirDelivery();
         paymentCardSelectionPage.verifyUSerShouldBeAbleToSelectCreditCArdOption();
         creditCardDetailsPage.userShouldBeAbleToEnterCardDetails();

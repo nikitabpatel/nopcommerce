@@ -26,6 +26,12 @@ public class ShoppingCart extends Utils
         clickOnElement(_clickOnCheckOut);
     }
 
+    public void verifyUserShouldConfirmShoppingCart()
+    {
+        clickOnElement(_clickOnTermsOfServiceBox);
+        clickOnElement(_clickOnCheckOut);
+    }
+
     public void verifyAppleIcamProduct()
     {
         Assert.assertEquals(getTextFromElement(_appleICamText),expectedAppleICamText);

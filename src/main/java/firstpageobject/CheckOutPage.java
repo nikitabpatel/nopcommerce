@@ -28,6 +28,10 @@ public class CheckOutPage extends Utils
         enterText(_billingPostCode, loadProp.getproperty("Postcode"));
         enterText(_billingPhoneNumber,loadProp.getproperty("Phonenumber"));
         clickOnElement(_clickOnContinueButton);
+    }
 
+    public void clickOnContinue()
+    {
+        clickOnElement(_clickOnContinueButton);
     }
 }
